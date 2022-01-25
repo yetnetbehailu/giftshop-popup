@@ -1,8 +1,32 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
-
-<h1 class="display-4">GiftShop pop-up</h1>
-
+<!-- Intro section; jumbotron & hero-img  -->
+<section class="hero-img">
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">GiftShop pop-up</h1>
+            <hr>
+            <p>
+                Essentially, art is everywhere - and can be dated back to the existence of the earliest humans, therefore often also considered a bi-product of culture.
+            </p>
+            <p>
+                The purpose of art in general is to allow people, both individually and in group settings, to express emotions, commemorate history, expose injustices, overcome obstacles, and gain an understanding of the world around them. At its center, art is a form of self-expression, empowering the artist to capture, show, or otherwise express themselves through their medium of choice. To put it simply, each piece of art contains a unique and individual purpose. The artist often defines the purpose of their work, and they may or may not leave each piece open to interpretation. Anyone can make art, with or without experience!
+            </p>
+            <div>
+                <a href="" class="btn">ART WORKSHOP BOOKING</a>
+                <a href="" class="btn">BUY ART/ART SUPPLIES</a>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock%}
