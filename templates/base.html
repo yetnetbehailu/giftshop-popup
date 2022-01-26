@@ -85,18 +85,32 @@
                 </div>
               </a>
               <ul class="dropdown-menu border-0" aria-labelledby="user-options">
-                <li><a class="dropdown-item" href="/accounts/signup/">Register</a></li>
-                <li><a class="dropdown-item" href="/accounts/login/">Login</a></li>
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <li><a class="dropdown-item" href="{% url 'product_management'%}">Product Management</a></li>
+                    {% endif %}
+                    <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url 'account_logout'%}" >Logout</a></li>
+                {% else %}
+                    <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                    <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                {% endif %}
               </ul>
             </div>
             <!-- Shopping cart link (mobile-view)-->
             <div class="">
-              <a href="/cart/" class="nav-link d-block d-lg-none">
+              <a href="{% url 'cart' %}" class="nav-link d-block d-lg-none {% if grand_total %}text-info{% else %}text-black{% endif %}">
                 <div class="text-center">
                   <div>
                     <i class="fas fa-shopping-cart fa-lg" aria-hidden="true"></i>
                   </div>
-                  <p class="my-0"></p>
+                  <p class="my-0">
+                    {% if grand_total %}
+                        € {{ grand_total|floatformat:2 }}
+                    {% else %}
+                        € 0.00
+                    {% endif %}
+                  </p>
                 </div>
               </a>
             </div>
@@ -104,19 +118,19 @@
             <div class="collapse navbar-collapse" id="main-nav">
               <ul class="navbar-nav w-auto mx-3">
                 <li class="nav-item list-inline-item">
-                  <a href="/" class="nav-link">HOME</a>
+                  <a href="{% url 'home' %}" class="nav-link">HOME</a>
                 </li>
                 <li class="nav-item list-inline-item">
-                  <a href="/services/" class="nav-link">SERVICES</a>
+                  <a href="{% url 'services' %}" class="nav-link">SERVICES</a>
                 </li>
                 <li class="nav-item list-inline-item">
-                  <a href="/products/" class="nav-link">PRODUCTS</a>
+                  <a href="{% url 'products' %}" class="nav-link">PRODUCTS</a>
                 </li>
                 <li class="nav-item list-inline-item">
-                  <a href="/events/" class="nav-link">EVENTS</a>
+                  <a href="{% url 'events' %}" class="nav-link">EVENTS</a>
                 </li>
                 <li class="nav-item">
-                  <a href="/contact/" class="nav-link">CONTACT</a>
+                  <a href="{% url 'contact' %}" class="nav-link">CONTACT</a>
                 </li>
               </ul>
             </div>
@@ -158,18 +172,32 @@
                   </div>
                 </a>
                 <ul class="dropdown-menu border-0" aria-labelledby="user-options">
-                  <li><a class="dropdown-item" href="/accounts/signup/">Register</a></li>
-                  <li><a class="dropdown-item" href="/accounts/login/">Login</a></li>
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                            <li><a class="dropdown-item" href="{% url 'product_management'%}">Product Management</a></li>
+                        {% endif %}
+                        <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'account_logout'%}" >Logout</a></li>
+                    {% else %}
+                        <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                    {% endif %}
                 </ul>
               </div>
               <!-- Shopping cart link (desktop-view)-->
               <div class="d-inline-block">
-                <a href="/cart/" class="nav-link">
+                <a href="{% url 'cart' %}" class="nav-link {% if grand_total %}text-info{% else %}text-black{% endif %}">
                   <div class="text-center">
                     <div>
                       <i class="fas fa-shopping-cart fa-lg" aria-hidden="true"></i>
                     </div>
-                    <p class="my-0"></p>
+                    <p class="my-0">
+                        {% if grand_total %}
+                            € {{ grand_total|floatformat:2 }}
+                        {% else %}
+                            € 0.00
+                        {% endif %}
+                    </p>
                   </div>
                 </a>
               </div>
