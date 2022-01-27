@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -103,11 +104,15 @@ WSGI_APPLICATION = 'giftshop_popup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+} """
+
+DATABASES = {
+    'default': dj_database_url.parse('postgres://vlnxjjipwzfwvc:a3c0f28f3a4f81e4a80df54f40d659d5be8c90b3b105f9b98fcba5b56445182e@ec2-54-216-17-9.eu-west-1.compute.amazonaws.com:5432/dnjt7tgoei0k7')
 }
 
 
