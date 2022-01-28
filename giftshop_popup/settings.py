@@ -14,6 +14,8 @@ import os
 import dj_database_url
 from pathlib import Path
 
+development = os.environ.get('DEVELOPMENT', False)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,12 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--1mj#ma^!t2!eyr*4qx=57mjw9$f9$^rv*4t88v=e(d2&)h_5#'
+SECRET_KEY = os.environ.get('SECRET_KEY',  'django-insecure--1mj#ma^!t2!eyr*4qx=57mjw9$f9$^rv*4t88v=e(d2&)h_5#')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = development
 
-ALLOWED_HOSTS = ['localhost']
+if development:
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+
 
 
 # Application definition
@@ -104,16 +110,17 @@ WSGI_APPLICATION = 'giftshop_popup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-""" DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-} """
-
-DATABASES = {
-    'default': dj_database_url.parse('postgres://vlnxjjipwzfwvc:a3c0f28f3a4f81e4a80df54f40d659d5be8c90b3b105f9b98fcba5b56445182e@ec2-54-216-17-9.eu-west-1.compute.amazonaws.com:5432/dnjt7tgoei0k7')
-}
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 
 
 # Password validation
