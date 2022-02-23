@@ -103,8 +103,10 @@ GiftShop pop-up is an open source application for all to use but would consider 
  - _"As **site owner(admin)**, I want a secure and convenient admin interface portal that only admin can access to **add/update/remove** products & services.  "_
 
 ## Wireframes
-- [Mobile Version]()
-- [Desktop Version]()
+ Wireframe sketches were made using [Balsamiq wireframes](https://balsamiq.cloud/#). These display the actual arrangement of the various pieces of content on the website. Which makes a helpful guideline during the development process.
+
+- [Mobile Version](wireframes/mobile_display)
+- [Desktop Version](wireframes/desktop_display)
 
 <summary><strong>Wireframe updates:</strong></summary><details>
 
