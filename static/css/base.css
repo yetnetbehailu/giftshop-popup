@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap');
+
+/* Mutual global style */
+html {
+    height: 100%;
+}
+
+body{
+    height: 100vh;
+}
+
+.header-container {
+    padding-top: 176px;
+}
+
+.capital-font{
+    text-transform: uppercase;
+}
+
+#offer-container {
+    background-color: #ffc7b4;
+}
+
+.offer-banner {
+    height: 30px;
+    margin: 0.5em 0;
+}
+
+.bg-custom {
+    background-color: #92aacd;
+}
+
+/* Navigation */
+
+.navbar {
+    padding: 0.5rem 1.5rem;
+}
+
+.navbar-collapse {
+    align-self: flex-end;
+}
+
+.site-nav {
+    padding: 0;
+}
+
+.nav-link{
+    padding: 0.5rem 0rem;
+    color: black;
+    font-family: 'Exo 2';
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+    font-family: 'Exo 2';
+}
+
+.navbar-light .navbar-toggler {
+    color: rgb(0 0 0 / 39%);
+}
+
+.cart-link {
+    color: beige;
+}
+
+.fa-bars:before{
+    font-size: 1.5em;
+    color: #000000cc;
+}
+
+.products-content {
+    border: 0;
+    background-color: #92aacd;
+    font-family: 'Exo 2';
+}
+
+/* Home page */
+
+.hero-img {
+    height: inherit;
+    background: url('/media/hero-img.jpeg')no-repeat center top fixed;
+    background-size: cover;
+}
+
+/* Media Queries */
+
+/* Medium screens */
+@media (min-width:768px) {
+    .header-container {
+        padding-top: 168px;
+    }
+}
+
+@media (min-width:992px) {
+    .header-container {
+        padding-top: 126px;
+    }
+}
