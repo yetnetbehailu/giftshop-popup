@@ -30,6 +30,8 @@ class Product(models.Model):
     sub_category = models.CharField(
         max_length=20, choices=SUB_CATEGORY_CHOICES, null=True,
         blank=True, default=False)
+    is_service = models.BooleanField(default=False)
+    duration = models.IntegerField(null=True, blank=True)
     name = models.CharField(max_length=254)
     artist = models.CharField(max_length=254, null=True, blank=True)
     sku = models.CharField(max_length=254, null=True, blank=True)
