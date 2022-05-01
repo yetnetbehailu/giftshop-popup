@@ -1,5 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Nunito:wght@500&display=swap');
 
+/* Colour and Font Variables */
+:root {
+    --pastelpink: #ffc7b4;
+    --sheerpink: #f6c6b3c4 ;
+    --pastelblue: #92aacd;
+    --sheerblue: #b0c5e49c;
+    --yellow: #f7ba23;
+    --lightyellow: #ffdb7e;
+    --sheeryellow: #fff6578f;
+
+    --exo-2: 'Exo 2', serif;
+    --nunito: 'Nunito', sans-serif;
+}
 /* Mutual global style */
 html {
     height: 100%;
@@ -18,16 +31,56 @@ body{
 }
 
 #offer-container {
-    background-color: #ffc7b4;
+    background-color: var(--pastelpink);
 }
 
 .offer-banner {
     height: 30px;
     margin: 0.5em 0;
+    font-family: var(--exo-2);
 }
 
 .bg-custom {
-    background-color: #92aacd;
+    background-color: var(--pastelblue);
+}
+
+.slogan-text {
+    font-family: fantasy, sans-serif;
+}
+
+.shop-title {
+    font-family: var(--exo-2);
+    font-size: x-large;
+    margin: 0;
+}
+
+.jumbo-btns{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding-bottom: 9px;
+}
+
+.yellow-btn {
+    background-color: var(--yellow);
+    color: white;
+    font-family: fantasy, sans-serif;
+    padding: 7px 5px 1px;
+    font-size: small;
+}
+
+.divider {
+    width: 60%;
+    height: 4px !important;
+    margin: 14px 0;
+    border-radius: 50%;
+    background: radial-gradient(var(--lightyellow), var(--yellow));
+    opacity: 0.6;
+}
+
+.sticker-icon {
+    width: 20%;
 }
 
 /* Navigation */
@@ -47,12 +100,12 @@ body{
 .nav-link{
     padding: 0.5rem 0rem;
     color: black;
-    font-family: 'Exo 2';
+    font-family: var(--exo-2);
 }
 
 .navbar-light .navbar-nav .nav-link {
     color: black;
-    font-family: 'Exo 2';
+    font-family: var(--exo-2);
 }
 
 .navbar-light .navbar-toggler {
@@ -70,19 +123,80 @@ body{
 
 .products-content {
     border: 0;
-    background-color: #92aacd;
-    font-family: 'Exo 2';
+    background-color: var(--pastelblue);
+    font-family: var(--exo-2);
 }
 
 /* Home page */
 
 .hero-img {
     height: inherit;
-    background: url('/media/hero-img.jpeg')no-repeat center top fixed;
+    background: url('/media/hero-img.jpeg') no-repeat center top fixed;
     background-size: cover;
 }
 
+.slogan {
+    background-color: #e7e7e7d9;
+    position: relative;
+    top: 30%;
+    width: 65%;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.intro-heading {
+    font-family: var(--exo-2);
+    padding-top: 30px;
+    margin-bottom: 1.5rem;
+}
+
+.intro-body {
+    display: flex;
+    justify-content: space-around;
+    font-family: var(--nunito);
+    font-size: 1.2rem;
+}
+
+.intro-footer {
+    display: flex;
+    justify-content: center;
+    font-family: var(--nunito);
+    font-size: 1.2rem;
+}
+
+.history-breif {
+    background-color: var(--sheeryellow);
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+}
+
+.purpose-breif {
+    background-color: var(--sheerblue);
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+}
+
+.summary-breif {
+    background-color: var(--sheerpink);
+    padding: 10px;
+    border-radius: 20px;
+}
+
 /* Media Queries */
+
+/* Small screens */
+@media (max-width:767px) {
+    .intro-body, .intro-footer {
+        margin: 0;
+    }
+}
 
 /* Medium screens */
 @media (min-width:768px) {
