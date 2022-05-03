@@ -54,33 +54,30 @@ body{
     margin: 0;
 }
 
-.jumbo-btns{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: center;
-    padding-bottom: 9px;
-}
-
 .yellow-btn {
     background-color: var(--yellow);
     color: white;
     font-family: fantasy, sans-serif;
-    padding: 7px 5px 1px;
-    font-size: small;
+    padding: 8px 12px 6px;
+    font-size: 1.1rem;
 }
 
 .divider {
-    width: 60%;
-    height: 4px !important;
-    margin: 14px 0;
     border-radius: 50%;
     background: radial-gradient(var(--lightyellow), var(--yellow));
-    opacity: 0.6;
+    height: 4px !important;
+    opacity: 1 !important;
+    margin: 16px auto;
+    width: 65%;
 }
 
 .sticker-icon {
     width: 20%;
+}
+
+.center-btn {
+    display: flex;
+    justify-content: center;
 }
 
 /* Navigation */
@@ -149,6 +146,31 @@ body{
     padding: 5px;
 }
 
+.jumbo-divider {
+    width: 60%;
+    height: 4px !important;
+    margin: 14px 0;
+    border-radius: 50%;
+    background: radial-gradient(var(--lightyellow), var(--yellow));
+    opacity: 0.6;
+}
+
+.jumbo-btns{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding-bottom: 9px;
+}
+
+.jumbo-btn {
+    background-color: var(--yellow);
+    color: white;
+    font-family: fantasy, sans-serif;
+    padding: 7px 5px 1px;
+    font-size: small;
+}
+
 .intro-heading {
     font-family: var(--exo-2);
     padding-top: 30px;
@@ -187,6 +209,36 @@ body{
     background-color: var(--sheerpink);
     padding: 10px;
     border-radius: 20px;
+    margin-bottom: 3rem;
+}
+
+.offer-heading {
+    font-family: var(--exo-2);
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.offer-breif {
+    font-family: var(--nunito);
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1.2rem 0;
+}
+
+.offer-img {
+    padding: 1.9rem 0 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.moving-figure-img {
+    width: 90%;
+}
+
+.art-supplies-img {
+    width: 100%;
+    background: var(--sheeryellow);
+    border-radius: 10px;
 }
 
 /* Media Queries */
