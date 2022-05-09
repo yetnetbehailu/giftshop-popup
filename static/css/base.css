@@ -88,6 +88,13 @@ body{
     font-family: var(--exo-2);
 }
 
+.blue-btn {
+    background-color: #92aacd;
+    color: white;
+    font-family: var(--nunito);
+    font-size: 1.1rem;
+}
+
 /* Navigation */
 
 .navbar {
@@ -273,6 +280,28 @@ text-align: center;
 }
 
 .events-body {
+    font-family: var(--nunito);
+}
+
+/* Products page */
+
+.products-heading {
+    font-family: var(--exo-2);
+}
+
+.product-category-btns {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    gap: 3rem;
+    list-style: none;
+}
+
+.product-name {
+    font-family: var(--exo-2);
+}
+
+.card-text {
     font-family: var(--nunito);
 }
 
