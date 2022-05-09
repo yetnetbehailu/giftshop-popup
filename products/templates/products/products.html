@@ -1,12 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
+{% block extra_title %}|Products{% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col">
-                {{products}}
+            <div class="col-12 text-center mt-4">
+                <h1 class="products-heading">Products</h1>
+                <hr class="divider">
+            </div>
+            <div class="col-12 offset-lg-4 col-lg-4 mt-2">
+                
+            </div>
+            <div class="col-12 col-lg-4">
+                
             </div>
         </div>
+        <div class="row">
+            {% for product in products %}
+            {% include "products/includes_products/product_cards.html" %}
+            {% endfor %}
+        </div>
+        <div></div>
     </div>
 {% endblock %}
