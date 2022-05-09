@@ -10,7 +10,28 @@
                 <hr class="divider">
             </div>
             <div class="col-12 offset-lg-4 col-lg-4 mt-2">
-                
+                <ul class="product-category-btns">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle yellow-btn btn" id="art-category-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Art
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="art-category-dropdown">
+                            <li>
+                                <a href="{% url 'products' %}?category=oil_painting" class="dropdown-item">Oil painting</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'products' %}?category=impasto_painting" class="dropdown-item">Impasto Painting</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'products' %}?category=line_art" class="dropdown-item">Line art</a>
+                            </li>
+                            <li class="dropdown-divider my-0"></li>
+                            <li>
+                                <a href="{% url 'products' %}" class="dropdown-item">All products</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'products' %}?category=art_supplies" class="yellow-btn btn">Art supplies</a></li>
+                </ul>
             </div>
             <div class="col-12 col-lg-4">
                 
