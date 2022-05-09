@@ -1,5 +1,33 @@
 <div class="col-12 col-md-6 col-lg-4 mt-5">
     <div class="card h-100 border-0">
-        
+        {% if product.image %}
+            <a href="">
+                <img class="card-img-top img-fluid" src="{{product.image.url}}" alt="{{product.name}}">
+            </a>
+        {% else %}
+            <a href="">
+                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.jpeg" alt="{{product.name}}">
+            </a>
+        {% endif %}
+        <div class="card-body">
+            <p class="lead product-name mb-2">{{ product.name }}</p>
+            {% if product.artist %}
+            <p class="card-text mb-2"><strong>Artist: {{ product.artist }}</strong></p>
+            {% endif %}
+            {% if product.width and product.height %}
+            <div class="d-flex justify-content-between card-text">
+                <p>Size: <strong>{{ product.width }}cm</strong>  x <strong>{{ product.height }}cm</strong></p>
+                <p><strong>€ {{ product.price }}</strong></p>
+            </div>
+            {% else %}
+            <div class="d-flex justify-content-end card-text">
+                <p><strong>€ {{ product.price }}</strong></p>
+            </div>
+            {% endif %}
+        </div>
+        <div class="d-flex justify-content-around">
+            <a href="#" class="btn blue-btn">View details</a>
+            <a href="#" class="btn yellow-btn">Add to cart</a>
+        </div>
     </div>
 </div>
