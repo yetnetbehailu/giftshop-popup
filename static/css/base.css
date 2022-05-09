@@ -44,8 +44,8 @@ body{
     background-color: var(--pastelblue);
 }
 
-.slogan-text {
-    font-family: fantasy, sans-serif;
+.slogan {
+    font-family: var(--nunito);
 }
 
 .shop-title {
@@ -57,8 +57,7 @@ body{
 .yellow-btn {
     background-color: var(--yellow);
     color: white;
-    font-family: fantasy, sans-serif;
-    padding: 8px 12px 6px;
+    font-family: var(--nunito);
     font-size: 1.1rem;
 }
 
@@ -78,6 +77,15 @@ body{
 .center-btn {
     display: flex;
     justify-content: center;
+}
+
+.long-divider {
+    height: 2px !important;
+    color: black;
+}
+
+.subscribe-heading {
+    font-family: var(--exo-2);
 }
 
 /* Navigation */
@@ -132,7 +140,7 @@ body{
     background-size: cover;
 }
 
-.slogan {
+.jumbotron {
     background-color: #e7e7e7d9;
     position: relative;
     top: 30%;
@@ -166,8 +174,7 @@ body{
 .jumbo-btn {
     background-color: var(--yellow);
     color: white;
-    font-family: fantasy, sans-serif;
-    padding: 7px 5px 1px;
+    font-family: var(--nunito);
     font-size: small;
 }
 
@@ -239,6 +246,34 @@ body{
     width: 100%;
     background: var(--sheeryellow);
     border-radius: 10px;
+}
+
+.email-subscription {
+    text-align: center;
+    padding: 5px;
+}
+
+.subscribe-text {
+    font-family: var(--nunito);
+}
+
+.events {
+text-align: center;
+}
+
+.events-breif {
+    background-color: var(--sheerblue);
+    padding: 25px 12px;
+    border-radius: 20px;
+    margin-top: 3rem;
+}
+
+.events-heading {
+    font-family: var(--exo-2);
+}
+
+.events-body {
+    font-family: var(--nunito);
 }
 
 /* Media Queries */
