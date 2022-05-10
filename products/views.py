@@ -9,6 +9,8 @@ def all_products(request):
     products = Product.objects.filter(is_service=False)
     # Displays none when hasn't been selected yet eg on page load
     categories = None
+    sub_categories = None
+
     # Displays the selected category items
     if request.GET:
         if 'category' in request.GET:
@@ -17,6 +19,10 @@ def all_products(request):
             # the __in syntax searches for the name field in category model
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
+
+        if 'sub_category' in request.GET:
+            sub_categories = request.GET['sub_category']
+            products = products.filter(sub_category=sub_categories)
 
     context = {
         'products': products,
