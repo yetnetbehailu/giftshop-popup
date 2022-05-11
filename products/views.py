@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
+from django.db.models import Q
 from .models import Product, Category
 
 
@@ -10,9 +12,10 @@ def all_products(request):
     # Displays none when hasn't been selected yet eg on page load
     categories = None
     sub_categories = None
+    query = None
 
-    # Displays the selected category items
     if request.GET:
+        # Displays the selected category items
         if 'category' in request.GET:
             # splits existing categories into a list at the commas
             categories = request.GET['category'].split(',')
@@ -24,9 +27,24 @@ def all_products(request):
             sub_categories = request.GET['sub_category']
             products = products.filter(sub_category=sub_categories)
 
+        # Displays search form queries
+        if 'q' in request.GET:
+            query = request.GET['q']
+            # if query blank display error message
+            if not query:
+                messages.error(request, 'No search quest entered!')
+                return redirect(reverse('products'))
+            # if query present enable search by name or description
+            # the __i syntax makes the query case insensitive
+            search_query = Q(name__icontains=query) | \
+                Q(description__icontains=query)
+            # To filter products according to quest pass query to filter method
+            products = products.filter(search_query)
+
     context = {
         'products': products,
         'current_categories': categories,
+        'search_word': query,
     }
 
     return render(request, 'products/products.html', context)

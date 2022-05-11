@@ -36,7 +36,7 @@
         </a>
         <!-- Search form (desktop-view)-->
         <div class="dropdown-menu border-0 p-3 rounded-0 my-0 desktop-search-form" aria-labelledby="desktop-search">
-            <form class="form" method="GET" action="/products/">
+            <form class="form" method="GET" action="{% url 'products' %}">
                 <div class="input-group w-100">
                     <input type="text" class="form-control border rounded-2" name="q" placeholder="Search" />
                     <div class="input-group-append">
