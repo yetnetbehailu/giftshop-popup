@@ -1,0 +1,291 @@
+[
+    {
+        "model":"products.category",
+        "pk":1,
+        "fields":{
+            "name":"art",
+            "friendly_name":"Art"
+        }
+    },
+    {
+        "model":"products.category",
+        "pk":2,
+        "fields":{
+            "name":"art_supplies",
+            "friendly_name":"Art Supplies"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":1,
+        "fields":{
+            "category":1,
+            "sub_category":"oil_painting",
+            "is_service":false,
+            "duration":null,
+            "name":"Oranges",
+            "artist":"tulla",
+            "sku":"oi1",
+            "description":"For the love of orange, a bright color of surprise but most times also a sign of warning. It’s an ideal piece of bold art for the confident owner.",
+            "rating":null,
+            "width":"30",
+            "height":"30",
+            "in_stock":true,
+            "price":"45.50",
+            "image_url":"https://5cc7c3ootfh3s6ncj47bjfv5-wpengine.netdna-ssl.com/wp-content/uploads/2020/01/Half-In-Half-Out-10x10-1.jpeg",
+            "image":"oranges.jpeg"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":2,
+        "fields":{
+            "category":1,
+            "sub_category":"line_art",
+            "is_service":false,
+            "duration":null,
+            "name":"plantmom life",
+            "artist":"Jada Pink",
+            "sku":"li1",
+            "description":"WHAT GIVES PEOPLE FEELINGS OF POWER? \r\nSome might say status others may say money, for me though it's bringing a plant back to life from the threshold of death.\r\n/\"The life of a plant mom\"\r\nArt piece presented a depiction of Monstera siblings",
+            "rating":null,
+            "width":"25",
+            "height":"25",
+            "in_stock":true,
+            "price":"18.00",
+            "image_url":"https://storage.googleapis.com/pod_public/1300/95956.jpg",
+            "image":"monstera.jpeg"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":3,
+        "fields":{
+            "category":1,
+            "sub_category":"impasto_painting",
+            "is_service":false,
+            "duration":null,
+            "name":"Salem",
+            "artist":"Aja Trier",
+            "sku":"im1",
+            "description":"The 500-year-old witch Salem Saberhagen, who was sentenced to spend 100 years as a cat by the Witches Council for plotting & attempting to take over the world. Reflecting what could have been during his favorite holiday season ,\"HALLOWEEEEEEN\".",
+            "rating":null,
+            "width":"15",
+            "height":"15",
+            "in_stock":false,
+            "price":"63.00",
+            "image_url":"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8d6bb952-2b30-4132-ad1d-b7e346778ff3/dckvcc4-fbf0ac6b-4044-4239-ba17-2cdc41a5d835.jpg/v1/fill/w_349,h_350,q_70,strp/starry_hallows__eve_by_sagittariusgallery_dckvcc4-350t.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODAyIiwicGF0aCI6IlwvZlwvOGQ2YmI5NTItMmIzMC00MTMyLWFkMWQtYjdlMzQ2Nzc4ZmYzXC9kY2t2Y2M0LWZiZjBhYzZiLTQwNDQtNDIzOS1iYTE3LTJjZGM0MWE1ZDgzNS5qcGciLCJ3aWR0aCI6Ijw9ODAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.E6uN4Ue5itOPvHKE2fX3aQ39KdTdPirhDvAxndpLTxA",
+            "image":"salem.jpeg"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":4,
+        "fields":{
+            "category":1,
+            "sub_category":"impasto_painting",
+            "is_service":false,
+            "duration":null,
+            "name":"HBD FLOWERS",
+            "artist":null,
+            "sku":"im2",
+            "description":"Sometimes we love each other dearly, other times we hate each other severely. \r\nNo matter the circumstances I'll choose to be with you not today, not tomorrow, but till the very end. \r\nWish you better then your heart desires\r\n/Yours truly beloved",
+            "rating":null,
+            "width":"20",
+            "height":"20",
+            "in_stock":true,
+            "price":"68.00",
+            "image_url":"https://i.etsystatic.com/6996104/r/il/dd6235/1781376314/il_570xN.1781376314_bc03.jpg",
+            "image":"flowers.jpeg"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":5,
+        "fields":{
+            "category":1,
+            "sub_category":"line_art",
+            "is_service":false,
+            "duration":null,
+            "name":"Narrow window",
+            "artist":"Dembe Drako",
+            "sku":"li2",
+            "description":"Euphoria a narrow window where pulse is racing off the charts. \r\nEuphoria distraction & destruction put aside, paused. That's when Euphoria starts.",
+            "rating":null,
+            "width":"25",
+            "height":"25",
+            "in_stock":true,
+            "price":"47.33",
+            "image_url":"https://happywall-img-gallery.imgix.net/28471/one_line_art_woman_masked.jpg",
+            "image":"euphoria.jpeg"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":6,
+        "fields":{
+            "category":1,
+            "sub_category":"oil_painting",
+            "is_service":false,
+            "duration":null,
+            "name":"Winter Wonders",
+            "artist":"Alex Yun",
+            "sku":"oi2",
+            "description":"Let it snow , let it snow, let it snow....\r\nArt depiction Gothenburg park",
+            "rating":null,
+            "width":"30",
+            "height":"30",
+            "in_stock":null,
+            "price":"102.99",
+            "image_url":"https://www.byhien.com/wp-content/uploads/2020/04/oil-painting-winter-landscape-2.jpg",
+            "image":"winter.jpeg"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":7,
+        "fields":{
+            "category":1,
+            "sub_category":"oil_painting",
+            "is_service":false,
+            "duration":null,
+            "name":"BLK WMN",
+            "artist":"Majimba Ma",
+            "sku":"oi3",
+            "description":"Dear black woman speak your mind even if considered as having an attitude. Don't go through life trying to be small, modest & accommodating. Own your beauty, intelligence & fierce energy. And if they come for you they\r\ncome for me too, but i rest assured that it will never stop us.",
+            "rating":null,
+            "width":"30",
+            "height":"30",
+            "in_stock":true,
+            "price":"148.99",
+            "image_url":"https://cdn.artweb.com/wp-content/uploads/2019/09/m_760355_Determined-Anarkali-Check-ArtWeb.jpg",
+            "image":"wmn.jpeg"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":8,
+        "fields":{
+            "category":1,
+            "sub_category":"line_art",
+            "is_service":false,
+            "duration":null,
+            "name":"Opp",
+            "artist":"Sheba Riya",
+            "sku":"li3",
+            "description":"Art depiction inspired by the famous J.M Wonderlands qoute; \r\n\"The sun watches what I do. But the moon knows all my secrets\"",
+            "rating":null,
+            "width":"20",
+            "height":"20",
+            "in_stock":true,
+            "price":"58.79",
+            "image_url":"https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/216145837/original/2eff7d5ec6fb408223efefbd679831572b20030c/create-a-minimalist-line-drawing.png",
+            "image":"constellations.jpeg"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":9,
+        "fields":{
+            "category":1,
+            "sub_category":"impasto_painting",
+            "is_service":false,
+            "duration":null,
+            "name":"Peacock Ego",
+            "artist":null,
+            "sku":"im3",
+            "description":"In a symbolic sense Peacock Ego art piece, is meant to capture the essence of a person whose full of confidence, is vibrant with a magnitude of love for themselves. However should be mindful to not come across as arrogant, egoistic & self consumed.",
+            "rating":null,
+            "width":"15",
+            "height":"15",
+            "in_stock":true,
+            "price":"89.00",
+            "image_url":"https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/peacock-textural-impasto-palette-knife-oil-painting-contemporary-impressionism-by-ana-maria-edulescu-ana-maria-edulescu.jpg",
+            "image":"ego.jpeg"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":10,
+        "fields":{
+            "category":2,
+            "sub_category":null,
+            "is_service":false,
+            "duration":null,
+            "name":"Canvas 4pack",
+            "artist":null,
+            "sku":"ca1",
+            "description":"Package Includes: 4x Blank Stretched Canvas \r\nEach set comes wrapped in plastic to ensure that the canvas stays white and pristine. Back-stapled for a clean look.\r\nMaterial: Made of cotton \r\nReady to use: Oil & acrylic color, but can also be used for sketching and drawing.\r\nAcid-free\r\nSuitable for: Beginners, professionals, kids craft & more\r\nSize range available\r\n30cmx30cm\r\n25cmx25cm\r\n20cmx20cm\r\n15cmx15cm",
+            "rating":"5.0",
+            "width":null,
+            "height":null,
+            "in_stock":true,
+            "price":"199.00",
+            "image_url":"https://images-na.ssl-images-amazon.com/images/I/816xktB3l2L._SL1500_.jpg",
+            "image":"canvas.jpeg"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":11,
+        "fields":{
+            "category":2,
+            "sub_category":null,
+            "is_service":true,
+            "duration":0,
+            "name":"Brush Set 1pack/20pcs",
+            "artist":null,
+            "sku":"br1",
+            "description":"Art Brushes 1PACK\r\nMaterial: Wood\r\nColor: Natural wooden state\r\nQuantity: 20pcs set\r\nPaint Type: Oil,Acrylic,Watercolor, Enamel, Cel-vinyl, Gouache\r\n\r\nHigh quality paintbrushes with a variety of shapes make creating art more easy, perfect for painters of all levels. Wonderful gift idea for your friends & families!\r\nIntended for long time use without compromise of the appearance or performance, after multiple painting and cleaning sessions.\r\nSize chart: 5/8 8 6 4 5 3 2 2 1 2/0; Length: 16.5 cm to 20 cm.\r\n\r\nCleaning TIPS: Clean your brushes with warm soapy water immediately after using them, avoid scrubbing while cleaning. Never leave your brushes resting on their heads in water, solvent, or when drying. Store clean brushes vertically, head-side-up or horizontally.",
+            "rating":"3.9",
+            "width":null,
+            "height":null,
+            "in_stock":true,
+            "price":"79.99",
+            "image_url":"https://rito.dk/30631-rito_product/pensler-nr-1-10-80stk.jpg",
+            "image":"brushes.jpeg"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":12,
+        "fields":{
+            "category":2,
+            "sub_category":null,
+            "is_service":false,
+            "duration":null,
+            "name":"W&N Artisan Colors 10pack",
+            "artist":null,
+            "sku":"pc1",
+            "description":"W&N Artisan \r\nOil paint that can be diluted and washed off with water, no need for harmful solvents. Wide color range suitable for mixing. Convenient packaging makes it easy to carry around & store\r\nvolume: 37ml  \r\nIdeal for professionals, beginners & kids crafts as well. \r\nManufacturer Winsor & Newton",
+            "rating":"4.6",
+            "width":null,
+            "height":null,
+            "in_stock":true,
+            "price":"170.00",
+            "image_url":"https://zenit-konst.se/wp-content/uploads/2021/12/ArtisanOil1.jpeg",
+            "image":"paint.jpeg"
+        }
+    },
+    {
+        "model":"products.product",
+        "pk":13,
+        "fields":{
+            "category":2,
+            "sub_category":null,
+            "is_service":false,
+            "duration":null,
+            "name":"yob",
+            "artist":null,
+            "sku":null,
+            "description":"jojoo",
+            "rating":null,
+            "width":null,
+            "height":null,
+            "in_stock":true,
+            "price":"99.00",
+            "image_url":null,
+            "image":""
+        }
+    }
+]
