@@ -1,11 +1,11 @@
 <div class="col-12 col-md-6 col-lg-4 mt-5">
     <div class="card h-100 border-0">
         {% if product.image %}
-            <a href="">
+            <a href="{% url 'product_detail' product.id %}">
                 <img class="card-img-top img-fluid" src="{{product.image.url}}" alt="{{product.name}}">
             </a>
         {% else %}
-            <a href="">
+            <a href="{% url 'product_detail' product.id %}">
                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.jpeg" alt="{{product.name}}">
             </a>
         {% endif %}
@@ -16,7 +16,7 @@
             {% endif %}
             {% if product.width and product.height %}
             <div class="d-flex justify-content-between card-text">
-                <p>Size: <strong>{{ product.width }}cm</strong>  x <strong>{{ product.height }}cm</strong></p>
+                <p><strong>Size: {{ product.width }}cm x {{ product.height }}cm</strong></p>
                 <p><strong>€ {{ product.price }}</strong></p>
             </div>
             {% else %}
@@ -26,7 +26,7 @@
             {% endif %}
         </div>
         <div class="d-flex justify-content-around">
-            <a href="#" class="btn blue-btn">View details</a>
+            <a href="{% url 'product_detail' product.id %}" class="btn blue-btn">View details</a>
             <a href="#" class="btn yellow-btn">Add to cart</a>
         </div>
     </div>
