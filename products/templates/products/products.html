@@ -3,6 +3,24 @@
 {% block extra_title %}|Products{% endblock %}
 
 {% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 border-bottom">
+                <ul class="breadcrumb d-flex my-0">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'products' %}">Products</a></li>
+                    {% if current_categories %}
+                    {% for category in current_categories %}
+                    <li><a href="{% url 'products' %}?category={{ category.name }}">{{ category.friendly_name }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                    {% if current_sub_categories %}
+                    <li>{{ current_sub_categories }}</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-12 text-center mt-4">
@@ -11,7 +29,7 @@
             </div>
             <div class="col-12 offset-lg-4 col-lg-4 mt-2">
                 <ul class="product-category-btns">
-                    <li class="dropdown">
+                    <li class="dropdown ms-3">
                         <a href="#" class="dropdown-toggle yellow-btn btn" id="art-category-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Art
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="art-category-dropdown">
@@ -34,7 +52,7 @@
                 </ul>
             </div>
             <div class="col-12 col-lg-4 d-flex justify-content-center align-self-center mt-2">
-                <div class="sort-select-wrapper">
+                <div class="sort-select-wrapper mb-3">
                     <select id="sort-selector" class="form-select form-select-sm border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                         <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
                         </option>
