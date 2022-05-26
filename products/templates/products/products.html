@@ -72,6 +72,20 @@
                 </div>
             </div>
         </div>
+        <div class="col-12 text-center text-md-left">
+            {% if search_word %}
+            <p class="mb-0">Your search for <strong>"{{search_word}}" </strong>returned<strong> ({{products|length}})</strong> {% if products|length > 1 %} results {% else %} result {% endif %}
+            </p>
+            {% elif current_categories %}
+                {% for category in current_categories %}
+                    <h5 class="counter-text mb-0">{{ category.friendly_name }} ({{products|length}}) {% if products|length > 1 %} items {% else %} item {% endif %}</h5>
+                {% endfor %}
+            {% elif current_sub_categories %}
+                <h5 class="counter-text mb-0">{{ current_sub_categories }} ({{products|length}}) {% if products|length > 1 %} items {% else %} item {% endif %}</h5>
+            {% else %}
+            <h5 class="counter-text mb-0"> ({{products|length}}) {% if products|length > 1 %} items {% else %} item {% endif %}</h5>
+            {% endif %}
+        </div>
         <div class="row">
             {% for product in products %}
             {% include "products/includes_products/product_cards.html" %}
