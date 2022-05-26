@@ -10,8 +10,8 @@
         <li class="nav-item list-inline-item">
             <a href="#" class="nav-link dropdown-toggle" id="products-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUCTS</a>
             <div class="dropdown-menu products-content" aria-labelledby="products-dropdown">
-                <a href="" class="dropdown-item">art</a>
-                <a href="" class="dropdown-item">art supplies</a>
+                <a href="{% url 'products' %}?category=art" class="dropdown-item">art</a>
+                <a href="{% url 'products' %}?category=art_supplies" class="dropdown-item">art supplies</a>
                 <a href="{% url 'products' %}" class="dropdown-item">all products</a>
             </div>
         </li>
