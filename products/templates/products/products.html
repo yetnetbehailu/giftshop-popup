@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-12 text-center mt-4">
                 <h1 class="products-heading">Products</h1>
-                <hr class="divider">
+                <hr class="heading-divider">
             </div>
             <div class="col-12 offset-lg-4 col-lg-4 mt-2">
                 <ul class="product-category-btns">
@@ -37,7 +37,7 @@
                                 <a href="{% url 'products' %}?sub_category=oil_painting" class="dropdown-item">Oil painting</a>
                             </li>
                             <li>
-                                <a href="{% url 'products' %}?sub_category=impasto_painting" class="dropdown-item">Impasto Painting</a>
+                                <a href="{% url 'products' %}?sub_category=impasto_painting" class="dropdown-item">Impasto painting</a>
                             </li>
                             <li>
                                 <a href="{% url 'products' %}?sub_category=line_art" class="dropdown-item">Line art</a>
@@ -53,7 +53,7 @@
             </div>
             <div class="col-12 col-lg-4 d-flex justify-content-center align-self-center mt-2">
                 <div class="sort-select-wrapper mb-3">
-                    <select id="sort-selector" class="form-select form-select-sm border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                    <select id="sort-selector" class="form-select form-select-sm border-{% if current_sorting != 'None_None' %}blue{% else %}yellow{% endif %}">
                         <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...
                         </option>
                         <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)
@@ -74,7 +74,7 @@
         </div>
         <div class="col-12 text-center text-md-left">
             {% if search_word %}
-            <p class="mb-0">Your search for <strong>"{{search_word}}" </strong>returned<strong> ({{products|length}})</strong> {% if products|length > 1 %} results {% else %} result {% endif %}
+            <p class="counter-text mb-0">Your search for <strong>"{{search_word}}" </strong>returned<strong> ({{products|length}})</strong> {% if products|length > 1 %} results {% else %} result {% endif %}
             </p>
             {% elif current_categories %}
                 {% for category in current_categories %}
