@@ -9,13 +9,13 @@
                 <ul class="breadcrumb d-flex my-0">
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'products' %}">Products</a></li>
-                    {% if current_categories %}
-                    {% for category in current_categories %}
+                    {% if selected_categories %}
+                    {% for category in selected_categories %}
                     <li><a href="{% url 'products' %}?category={{ category.name }}">{{ category.friendly_name }}</a></li>
                     {% endfor %}
                     {% endif %}
-                    {% if current_sub_categories %}
-                    <li>{{ current_sub_categories }}</li>
+                    {% if selected_sub_category %}
+                    <li>{{ sub_category_name }}</li>
                     {% endif %}
                 </ul>
             </div>
@@ -76,12 +76,12 @@
             {% if search_word %}
             <p class="counter-text mb-0">Your search for <strong>"{{search_word}}" </strong>returned<strong> ({{products|length}})</strong> {% if products|length > 1 %} results {% else %} result {% endif %}
             </p>
-            {% elif current_categories %}
-                {% for category in current_categories %}
+            {% elif selected_categories %}
+                {% for category in selected_categories %}
                     <h5 class="counter-text mb-0">{{ category.friendly_name }} ({{products|length}}) {% if products|length > 1 %} items {% else %} item {% endif %}</h5>
                 {% endfor %}
-            {% elif current_sub_categories %}
-                <h5 class="counter-text mb-0">{{ current_sub_categories }} ({{products|length}}) {% if products|length > 1 %} items {% else %} item {% endif %}</h5>
+            {% elif selected_sub_category %}
+                <h5 class="counter-text mb-0">{{ sub_category_name }} ({{products|length}}) {% if products|length > 1 %} items {% else %} item {% endif %}</h5>
             {% else %}
             <h5 class="counter-text mb-0"> ({{products|length}}) {% if products|length > 1 %} items {% else %} item {% endif %}</h5>
             {% endif %}

@@ -12,7 +12,8 @@ def all_products(request):
     products = Product.objects.filter(is_service=False)
     # Displays none when hasn't been selected yet eg on page load
     categories = None
-    sub_categories = None
+    selected_sub_category = None
+    sub_category_name = []
     query = None
     sort = None
     direction = None
@@ -27,8 +28,15 @@ def all_products(request):
             categories = Category.objects.filter(name__in=categories)
 
         if 'sub_category' in request.GET:
-            sub_categories = request.GET['sub_category']
-            products = products.filter(sub_category=sub_categories)
+            selected_sub_category = request.GET['sub_category']
+            products = products.filter(sub_category=selected_sub_category)
+            for product in products:
+                if product.get_sub_category_display() not in \
+                 sub_category_name:
+                    sub_category_name.append(
+                        product.get_sub_category_display())
+                    # Converts list to string
+                    sub_category_name = ','.join(sub_category_name)
 
         # Displays search form queries
         if 'q' in request.GET:
@@ -62,10 +70,11 @@ def all_products(request):
 
     context = {
         'products': products,
-        'current_categories': categories,
+        'selected_categories': categories,
         'search_word': query,
         'current_sorting': current_sorting,
-        'current_sub_categories': sub_categories,
+        'selected_sub_category': selected_sub_category,
+        'sub_category_name': sub_category_name,
     }
 
     return render(request, 'products/products.html', context)
