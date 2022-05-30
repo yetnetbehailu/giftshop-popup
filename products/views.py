@@ -13,7 +13,7 @@ def all_products(request):
     # Displays none when hasn't been selected yet eg on page load
     categories = None
     selected_sub_category = None
-    sub_category_name = []
+    sub_category_name = set()
     query = None
     sort = None
     direction = None
@@ -31,12 +31,9 @@ def all_products(request):
             selected_sub_category = request.GET['sub_category']
             products = products.filter(sub_category=selected_sub_category)
             for product in products:
-                if product.get_sub_category_display() not in \
-                 sub_category_name:
-                    sub_category_name.append(
-                        product.get_sub_category_display())
-                    # Converts list to string
-                    sub_category_name = ','.join(sub_category_name)
+                sub_category_name.add(product.get_sub_category_display())
+            # Cast set to a list then convert list to string object
+            sub_category_name = ','.join(list(sub_category_name))
 
         # Displays search form queries
         if 'q' in request.GET:
