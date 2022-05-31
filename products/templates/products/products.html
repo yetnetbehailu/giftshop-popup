@@ -8,13 +8,16 @@
             <div class="col-12 border-bottom">
                 <ul class="breadcrumb d-flex my-0">
                     <li><a href="{% url 'home' %}">Home</a></li>
+                    {% if not selected_categories and not selected_sub_category %}
+                    <li>Products</li>
+                    {% else %}
                     <li><a href="{% url 'products' %}">Products</a></li>
+                    {% endif %}
                     {% if selected_categories %}
                     {% for category in selected_categories %}
-                    <li><a href="{% url 'products' %}?category={{ category.name }}">{{ category.friendly_name }}</a></li>
+                    <li>{{ category.friendly_name }}</li>
                     {% endfor %}
-                    {% endif %}
-                    {% if selected_sub_category %}
+                    {% elif  selected_sub_category %}
                     <li>{{ sub_category_name }}</li>
                     {% endif %}
                 </ul>

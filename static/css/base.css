@@ -354,7 +354,6 @@ text-align: center;
 
 .breadcrumb li a {
     color: #3c3a3a;
-    text-decoration: none;
 }
 
 .breadcrumb li + li:before{
