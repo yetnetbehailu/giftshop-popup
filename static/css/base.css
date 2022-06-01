@@ -9,6 +9,7 @@
     --yellow: #f7ba23;
     --lightyellow: #ffdb7e;
     --sheeryellow: #fff6578f;
+    --softblack: #3c3a3a;
 
     --exo-2: 'Exo 2', serif;
     --nunito: 'Nunito', sans-serif;
@@ -102,6 +103,10 @@ body{
     opacity: 1 !important;
     margin: 16px auto;
     width: 65%;
+}
+
+.border-black {
+    border: 1px solid var(--softblack) ;
 }
 
 /* Navigation */
@@ -317,7 +322,7 @@ text-align: center;
 /* select dropdown */
 
 #sort-selector {
-    color: #3c3a3a;
+    color: var(--softblack) ;
     font-family: var(--nunito);
 }
 
@@ -348,19 +353,45 @@ text-align: center;
 
 .breadcrumb li{
     padding: 5px;
-    color: #3c3a3a;
+    color: var(--softblack) ;
     content: "/\00a0";
 }
 
 .breadcrumb li a {
-    color: #3c3a3a;
+    color: var(--softblack) ;
 }
 
 .breadcrumb li + li:before{
-    color: #3c3a3a;
+    color: var(--softblack) ;
     content: "/\00a0";
   }
 
+/* Back to top btn */
+
+.btt-button {
+    height: 45px;
+    width: 45px;
+    position: fixed;
+    bottom: 3rem;
+    right: 1rem;
+    display: none;
+    border-radius: 5px;
+    background: white;
+}
+
+.btt-link {
+    text-decoration: none;
+    color: var(--softblack) ;
+    cursor: pointer;
+}
+
+.btt-button:hover {
+    background-color: #f3f3f3;
+}
+
+.btt-link:hover {
+    color: var(--softblack) ;
+}
 /* Media Queries */
 
 /* Small screens */
