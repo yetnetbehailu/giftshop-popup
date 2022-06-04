@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+
 from .models import Product, Category
 
 
@@ -9,7 +11,7 @@ def all_products(request):
     """
     View that displays all products including logic to sort & search \
     queries """
-    products = Product.objects.filter(is_service=False)
+    products = Product.objects.filter(is_service=False).order_by('id')
     # Displays none when hasn't been selected yet eg on page load
     categories = None
     selected_sub_category = None
@@ -65,8 +67,21 @@ def all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    # Pagination logic
+    paginator = Paginator(products, 9)  # Show 9 products per page
+
+    # Get request variable value if exsist else default to 1
+    page_num = request.GET.get('page', 1)
+
+    try:   # returns the desired page object
+        product_page = paginator.page(page_num)
+    except PageNotAnInteger:  # if page not an integer then default to 1
+        product_page = paginator.page(1)
+    except EmptyPage:  # if page is empty return the last page
+        product_page = paginator.page(paginator.num_pages)
+
     context = {
-        'products': products,
+        'products': product_page,
         'selected_categories': categories,
         'search_word': query,
         'current_sorting': current_sorting,

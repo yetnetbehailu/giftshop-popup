@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load extra_templatetags %}
+
 {% block extra_title %}|Products{% endblock %}
 
 {% block content %}
@@ -74,27 +76,61 @@
                     </select>
                 </div>
             </div>
-        </div>
-        <div class="col-12 text-center text-md-left">
-            {% if search_word %}
-            <p class="counter-text mb-0">Your search for <strong>"{{search_word}}" </strong>returned<strong> ({{products|length}})</strong> {% if products|length > 1 %} results {% else %} result {% endif %}
-            </p>
-            {% elif selected_categories %}
-                {% for category in selected_categories %}
-                    <h5 class="counter-text mb-0">{{ category.friendly_name }} ({{products|length}}) {% if products|length > 1 %} items {% else %} item {% endif %}</h5>
-                {% endfor %}
-            {% elif selected_sub_category %}
-                <h5 class="counter-text mb-0">{{ sub_category_name }} ({{products|length}}) {% if products|length > 1 %} items {% else %} item {% endif %}</h5>
-            {% else %}
-            <h5 class="counter-text mb-0"> ({{products|length}}) {% if products|length > 1 %} items {% else %} item {% endif %}</h5>
-            {% endif %}
+            <div class="col-12 text-center text-md-left">
+                {% if search_word %}
+                <p class="counter-text mb-0">Your search for <strong>"{{search_word}}" </strong>returned<strong> ({{ products.paginator.count }})</strong>{% if products.paginator.count > 1 %} results {% else %} result {% endif %}
+                </p>
+                {% elif selected_categories %}
+                    {% for category in selected_categories %}
+                        <h5 class="counter-text mb-0">{{ category.friendly_name }} ({{ products.paginator.count }}){% if products.paginator.count > 1 %} items {% else %} item {% endif %}</h5>
+                    {% endfor %}
+                {% elif selected_sub_category %}
+                    <h5 class="counter-text mb-0">{{ sub_category_name }} ({{ products.paginator.count }}){% if products.paginator.count > 1 %} items {% else %} item {% endif %}</h5>
+                {% else %}
+                <h5 class="counter-text mb-0">({{ products.paginator.count }}) {% if products.paginator.count > 1 %} items {% else %} item {% endif %}</h5>
+                {% endif %}
+            </div>
         </div>
         <div class="row">
             {% for product in products %}
             {% include "products/includes_products/product_cards.html" %}
             {% endfor %}
         </div>
-        <div></div>
+        {% if products.has_other_pages %}
+        <div class="row">
+            <div class="col-12">
+                <ul class="pagination">
+                    {% if products.paginator.num_pages != 1 %}
+                    <li><a href="?{% url_transform page=1 %}">First</a></li> 
+                    {% else %}
+                    <li>First</li>
+                    {% endif %}
+                    {% if products.has_previous %}
+                    <li><a href="?{% url_transform page=products.previous_page_number %}">&laquo;</a></li>
+                    {% else %}
+                    <li>&laquo;</li>
+                    {% endif %}
+                    {% for i in products.paginator.page_range %}
+                    {% if products.number == i %}
+                    <li class="active"><span class="">{{ i }}<span class="sr-only">(current)</span></span></li>
+                    {% elif products.number > i|add:"-3" and products.number < i|add:"+3"%}
+                    <li class=""><a class="" href="?{% url_transform page=i %}">{{ i }}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if products.has_next %}
+                    <li><a href="?{% url_transform page=products.next_page_number %}">&raquo;</a></li>
+                    {% else %}
+                    <li>&raquo;</li>
+                    {% endif %}
+                    {% if products.paginator.num_pages != products.number %}
+                    <li><a href="?{% url_transform page=products.paginator.num_pages %}">Last</a></li>
+                    {% else %}
+                    <li>Last</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
     </div>
     <div class="btt-button border-black shadow-sm" id="scroll-to-top">
         <a class="btt-link d-flex h-100">
