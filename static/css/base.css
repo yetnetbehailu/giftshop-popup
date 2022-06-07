@@ -105,8 +105,28 @@ body{
     width: 65%;
 }
 
-.border-black {
-    border: 1px solid var(--softblack) ;
+.current-page{
+    background: var(--lightyellow);
+    border-radius: 50%;
+    padding: 1px 8px;
+}
+
+a.disabled {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+.pagination {
+    font-family: var(--nunito);
+}
+
+.pagination li a {
+    text-decoration: none;
+    color: var(--softblack);
+}
+
+.yellow-arrow {
+    color: var(--yellow) !important;
 }
 
 /* Navigation */

@@ -99,33 +99,33 @@
         {% if products.has_other_pages %}
         <div class="row">
             <div class="col-12">
-                <ul class="pagination">
+                <ul class="pagination mb-0 mt-4 mx-auto justify-content-center">
                     {% if products.paginator.num_pages != 1 %}
                     <li><a href="?{% url_transform page=1 %}">First</a></li> 
                     {% else %}
-                    <li>First</li>
+                    <li class="fw-bold">First</li>
                     {% endif %}
                     {% if products.has_previous %}
-                    <li><a href="?{% url_transform page=products.previous_page_number %}">&laquo;</a></li>
+                    <li class="mx-2"><a href="?{% url_transform page=products.previous_page_number %}"><i class="fa-solid fa-angle-left yellow-arrow"></i></a></li>
                     {% else %}
-                    <li>&laquo;</li>
+                    <li class="mx-2"><i class="fa-solid fa-angle-left"></i></li>
                     {% endif %}
                     {% for i in products.paginator.page_range %}
                     {% if products.number == i %}
-                    <li class="active"><span class="">{{ i }}<span class="sr-only">(current)</span></span></li>
+                    <li class="active mx-2 fw-bold current-page"><span class="">{{ i }}<span class="sr-only">(current)</span></span></li>
                     {% elif products.number > i|add:"-3" and products.number < i|add:"+3"%}
-                    <li class=""><a class="" href="?{% url_transform page=i %}">{{ i }}</a></li>
+                    <li class="mx-2"><a class="" href="?{% url_transform page=i %}">{{ i }}</a></li>
                     {% endif %}
                     {% endfor %}
                     {% if products.has_next %}
-                    <li><a href="?{% url_transform page=products.next_page_number %}">&raquo;</a></li>
+                    <li class="mx-2"><a href="?{% url_transform page=products.next_page_number %}"><i class="fa-solid fa-angle-right yellow-arrow"></i></a></li>
                     {% else %}
-                    <li>&raquo;</li>
+                    <li class="mx-2"><i class="fa-solid fa-angle-right"></i></li>
                     {% endif %}
                     {% if products.paginator.num_pages != products.number %}
-                    <li><a href="?{% url_transform page=products.paginator.num_pages %}">Last</a></li>
+                    <li><a class="" href="?{% url_transform page=products.paginator.num_pages %}">Last</a></li>
                     {% else %}
-                    <li>Last</li>
+                    <li class="fw-bold">Last</li>
                     {% endif %}
                 </ul>
             </div>
