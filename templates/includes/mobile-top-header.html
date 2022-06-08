@@ -49,7 +49,7 @@
 </div>
 <!-- Shopping cart link (mobile-view)-->
 <div class="">
-    <a href="#" class="nav-link d-block d-lg-none {% if grand_total %}cart-link{% else %}text-black{% endif %}">
+    <a href="{% url 'cart_view' %}" class="nav-link d-block d-lg-none {% if grand_total %}cart-link{% else %}text-black{% endif %}">
         <div class="text-center">
             <div>
                 <i class="fas fa-shopping-cart fa-lg" aria-hidden="true"></i>

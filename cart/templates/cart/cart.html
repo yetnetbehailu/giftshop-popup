@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-4">
+                <h2 class="text-center cart-heading">Shopping cart</h2>
+                <hr class="heading-divider">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {% if cart_items %}
+                <div></div>
+                {% else %}
+                <img class="empty-cart-img mt-4" src="/media/cart_empty.png" alt="Empty cart">
+                <p class="lead text-center mt-2">Your cart is empty</p>
+                <a href="{% url 'products' %}" class="btn yellow-btn ms-3 mt-2">
+                    <span><i class="fa-solid fa-angle-left"></i> Continue Shopping 
+                    </span>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
