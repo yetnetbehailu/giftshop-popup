@@ -57,7 +57,7 @@ body{
 
 .yellow-btn {
     background-color: var(--yellow);
-    color: white;
+    color: black;
     font-family: var(--nunito);
     font-size: 1.1rem;
 }
@@ -91,7 +91,7 @@ body{
 
 .blue-btn {
     background-color: #92aacd;
-    color: white;
+    color: black;
     font-family: var(--nunito);
     font-size: 1.1rem;
 }
@@ -118,11 +118,12 @@ a.disabled {
 
 .pagination {
     font-family: var(--nunito);
+    color: black;
 }
 
 .pagination li a {
     text-decoration: none;
-    color: var(--softblack);
+    color: black;
 }
 
 .yellow-arrow {
