@@ -74,13 +74,13 @@
                                         {% include 'cart/includes_cart/item_image.html'%}
                                     </td>
                                     {% if item.product.is_service == False %}
-                                    <td class="w-25 py-3">
+                                    <td class="py-3">
                                         {% include 'cart/includes_cart/item_specification.html'%}
                                     </td>
                                     <td class="td-padding">
                                         <p class="mb-1"><strong>€ {{ item.product.price }}</strong><small class="text-muted"> / per unit</small></p>
                                     </td>
-                                    <td class="td-padding">
+                                    <td class="td-padding w-25 py-3">
                                         {% include 'cart/includes_cart/update_cart_form.html'%}
                                     </td>
                                     <td class="td-padding">
@@ -103,4 +103,10 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'js/quantity_input.js' %}"></script>
 {% endblock %}
