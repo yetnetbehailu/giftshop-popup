@@ -109,4 +109,25 @@
 {% block postloadjs %}
     {{ block.super }}
     <script src="{% static 'js/quantity_input.js' %}"></script>
+
+    <script>
+        // Update quantity on click, handles quantity form validation
+        $('.update-cart-link').click(function(e) {
+            let form = $(this).prev('.update-cart-form');
+            form.submit();
+        })
+
+        // Remove item & reload on click
+        $('.remove-item-link').click(function(e) {
+            let csrfToken = '{{csrf_token}}';
+            let itemId = $(this).attr('id').split('remove_')[1];
+            let url = `/cart/remove/${itemId}/`;
+            let data = {'csrfmiddlewaretoken': csrfToken};
+
+            $.post(url, data)
+                .done(function() {
+                    location.reload();
+                });
+        })  
+    </script>
 {% endblock %}
