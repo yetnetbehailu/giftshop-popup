@@ -9,6 +9,7 @@
                 <hr class="heading-divider">
             </div>
         </div>
+        {% if cart_items %}
         <!-- Cart summary info -->
         <div class="row cart-info mt-2">
             <div class="col-12 col-md-6 cart-summary mt-2">
@@ -16,7 +17,7 @@
                 <h6>Delivery Cost: €{{shipping|floatformat:2}}</h6>
                 <h5><strong>Grand Total: €{{grand_total|floatformat:2}}</strong></h5>
                 {% if free_shipping_delta > 0 %}
-                <p class="text-danger">Get free delivery by spending <strong>{{free_shipping_delta}}</strong> more!
+                <p class="text-danger">Get free delivery by spending <strong>{{free_shipping_delta}} €</strong> more!
                 </p>
                 {% endif %}
             </div>
@@ -31,7 +32,6 @@
         </div>
         <div class="row">
             <div class="col">
-                {% if cart_items %}
                 <!-- Cart display on mobile view -->
                 <div class="d-block d-md-none mt-4">
                     <!-- Display cart items -->
@@ -92,16 +92,16 @@
                         </table>
                     </div>
                 </div>
-                {% else %}
-                <img class="empty-cart-img mt-4" src="/media/cart_empty.png" alt="Empty cart">
-                <p class="lead text-center mt-2">Your cart is empty</p>
-                <a href="{% url 'products' %}" class="btn yellow-btn ms-3 mt-2">
-                    <span><i class="fa-solid fa-angle-left"></i> Continue Shopping 
-                    </span>
-                </a>
-                {% endif %}
             </div>
         </div>
+        {% else %}
+        <img class="empty-cart-img mt-4" src="/media/cart_empty.png" alt="Empty cart">
+        <p class="lead text-center mt-2">Your cart is empty</p>
+        <a href="{% url 'products' %}" class="btn yellow-btn ms-3 mt-2">
+            <span><i class="fa-solid fa-angle-left"></i> Continue Shopping 
+            </span>
+        </a>
+        {% endif %}
     </div>
 {% endblock %}
 
