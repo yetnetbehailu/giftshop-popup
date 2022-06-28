@@ -139,6 +139,10 @@ a.disabled {
     font-family: var(--nunito);
 }
 
+.btn-close {
+    font-size: small;
+}
+
 /* Navigation */
 
 .navbar {
@@ -449,6 +453,45 @@ text-align: center;
     text-decoration: none;
 }
 
+/* Toast messages */
+
+.message-container {
+    position: fixed;
+    top: 10rem;
+    right: 0.5rem;
+    z-index: 99999;
+}
+
+.toast {
+    width: 300px;
+    background-color: white;
+}
+
+.toast-header {
+    font-family: var(--exo-2);
+    font-size: 1rem;
+}
+
+.toast-body {
+    font-family: var(--nunito);
+}
+
+.toast-success {
+    border-left: 0.5rem solid seagreen;
+}
+
+.toast-error {
+    border-left: 0.5rem solid #df3b45;
+}
+
+.toast-warning {
+    border-left: 0.5rem solid #f7c133;
+}
+
+.toast-info {
+    border-left: 0.5rem solid #41b9e0;
+}
+
 /* Media Queries */
 
 /* Small screens */
@@ -482,6 +525,10 @@ text-align: center;
 
     .cart-info {
         margin-top: 1rem;
+    }
+
+    .toast-header {
+        font-size: 1.2rem;
     }
 }
 
