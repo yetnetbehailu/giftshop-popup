@@ -46,8 +46,8 @@ def update_cart(request, item_id):
             {cart[item_id]}')
     else:
         cart.pop(item_id)
+        messages.success(request, f'Removed "{product.name}" from your cart')
     request.session['cart'] = cart
-    messages.success(request, f'Removed "{product.name}" from your cart')
 
     return redirect(reverse('cart_view'))
 
