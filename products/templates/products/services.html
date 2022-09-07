@@ -1,12 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}|Services{% endblock %}
+
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col">
-                {{services}}
+            <div class="col-12 col-lg-10 m-auto text-center mt-4">
+                <h1 class="services-heading">Services</h1>
+                <hr class="heading-divider">
+                <p class="services-intro">"Classes come in an array of options, including beginner sessions, intermediate workshops and more advanced master classes. All workshops are taught by professionals, with a passion for sharing their knowledge."</p>
             </div>
+        </div>
+        <!-- Main content service cards -->
+        <div class="row">
+            {% for service in services %}
+            {% include "products/includes_services/service_cards.html" %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
