@@ -14,9 +14,15 @@
         </div>
         <!-- Main content service cards -->
         <div class="row">
-            {% for service in services %}
-            {% include "products/includes_services/service_cards.html" %}
-            {% endfor %}
+            <div class="col-12 col-lg-10 m-auto mt-5">
+                {% for service in services %}
+                    {% if service.pk|divisibleby:2 %}
+                        {% include "products/includes_services/service_cards_even.html" %}
+                    {% else %}
+                        {% include "products/includes_services/service_cards_odd.html" %}
+                    {% endif %} 
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -1,0 +1,28 @@
+<div class="card mb-5 shadow">
+    <div class="row">
+        <div class="col-12 col-md-7">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{ service.name }}</h5>
+                <p class="card-text">{{ service.description }}</p>
+                <div class="d-flex justify-content-between">
+                    <p class="card-text"><strong>Duration: {{ service.duration }}{% if service.duration > 1%}hours {% else %} hour{% endif %}</strong></p>
+                    <p class="card-text"><strong>€ {{ service.price }}</strong> </p>
+                </div>
+                <div class="text-center">
+                    <a href="#" class="btn blue-btn w-50">Learn more</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-5">
+            {% if service.image %}
+            <a href="#">
+                <img class="card-img-top img-fluid service-img" src="{{service.image.url}}" alt="{{service.name}}">
+            </a>
+            {% else %}
+            <a href="#">
+                <img class="card-img-top img-fluid service-no-img" src="{{ MEDIA_URL }}no-image.jpeg" alt="{{service.name}}">
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>

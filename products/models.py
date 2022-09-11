@@ -1,5 +1,6 @@
 from django.db import models
-from django.core.validators import RegexValidator
+from django.core.validators import (RegexValidator, MinValueValidator,
+                                    MaxValueValidator)
 
 
 class Category(models.Model):
@@ -31,13 +32,16 @@ class Product(models.Model):
         max_length=20, choices=SUB_CATEGORY_CHOICES, null=True,
         blank=True, default=False)
     is_service = models.BooleanField(default=False)
-    duration = models.IntegerField(null=True, blank=True)
+    duration = models.IntegerField(  # Field related to only services
+        null=True, blank=True, validators=[MinValueValidator(1),
+                                           MaxValueValidator(24)])
     name = models.CharField(max_length=254)
     artist = models.CharField(max_length=254, null=True, blank=True)
     sku = models.CharField(max_length=254, null=True, blank=True)
     description = models.TextField()
-    rating = models.DecimalField(max_digits=2, decimal_places=1, null=True,
-                                 blank=True)
+    rating = models.DecimalField(  # Field related to only services
+        max_digits=2, decimal_places=1, null=True, blank=True,
+        validators=[MinValueValidator(0), MaxValueValidator(5)])
     width = models.CharField(
         max_length=4, null=True, blank=True,
         validators=[RegexValidator(r'^\d[0-9]$')])
@@ -48,6 +52,9 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["pk"]
 
     def __str__(self):
         return str(self.name)
