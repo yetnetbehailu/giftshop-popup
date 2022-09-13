@@ -2,13 +2,13 @@
     <div class="row">
         <div class="col-12 col-md-7">
             <div class="card-body">
-                <h5 class="card-title text-center">{{ service.name }}</h5>
-                <p class="card-text">{{ service.description }}</p>
+                <h5 class="card-title text-center mt-1">{{ service.name }}</h5>
+                <p class="card-text mt-3">{{ service.description }}</p>
                 <div class="d-flex justify-content-between">
-                    <p class="card-text"><strong>Duration: {{ service.duration }}{% if service.duration > 1%}hours {% else %} hour{% endif %}</strong></p>
+                    <p class="card-text"><strong>Duration: {{ service.duration }}{% if service.duration > 1%} hours {% else %} hour{% endif %}</strong></p>
                     <p class="card-text"><strong>€ {{ service.price }}</strong> </p>
                 </div>
-                <div class="text-center">
+                <div class="text-center py-1">
                     <a href="#" class="btn blue-btn w-50">Learn more</a>
                 </div>
             </div>

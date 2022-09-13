@@ -492,6 +492,33 @@ text-align: center;
     border-left: 0.5rem solid #41b9e0;
 }
 
+/* Services page */
+
+.services-heading {
+    font-family: var(--exo-2);
+}
+
+.services-intro {
+    background-color: var(--sheeryellow);
+    padding: 10px;
+    border-radius: 20px;
+    font-family: var(--nunito);
+}
+
+.card-title {
+    font-family: var(--exo-2);
+}
+
+.service-img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-no-img {
+    height: 100%;
+    object-fit: cover;
+}
+
 /* Media Queries */
 
 /* Small screens */
