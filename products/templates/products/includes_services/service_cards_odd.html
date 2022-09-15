@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 col-md-5">
             {% if service.image %}
-            <a href="#">
+            <a href="{% url 'service_detail' service.id %}">
                 <img class="card-img-top img-fluid service-img" src="{{service.image.url}}" alt="{{service.name}}">
             </a>
             {% else %}
@@ -20,7 +20,7 @@
                     <p class="card-text"><strong>€ {{ service.price }}</strong> </p>
                 </div>
                 <div class="text-center py-1">
-                    <a href="#" class="btn blue-btn w-50">Learn more</a>
+                    <a href="{% url 'service_detail' service.id %}" class="btn blue-btn w-50">Learn more</a>
                 </div>
             </div>
         </div>

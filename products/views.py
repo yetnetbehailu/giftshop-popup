@@ -112,3 +112,14 @@ def all_services(request):
     }
 
     return render(request, 'products/services.html', context)
+
+
+def service_detail(request, service_id):
+    """ View that specifically displays individual service details """
+    service = get_object_or_404(Product, pk=service_id)
+
+    context = {
+        'service': service,
+    }
+
+    return render(request, 'products/service_detail.html', context)
