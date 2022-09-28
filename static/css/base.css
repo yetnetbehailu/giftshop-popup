@@ -519,6 +519,21 @@ text-align: center;
     object-fit: cover;
 }
 
+/* Service detail page */
+.service-img-detail {
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-no-img-detail {
+    height: 100%;
+    object-fit: cover;
+}
+
+.star-rating {
+    color: var(--yellow);
+}
+
 /* Media Queries */
 
 /* Small screens */
@@ -556,6 +571,14 @@ text-align: center;
 
     .toast-header {
         font-size: 1.2rem;
+    }
+
+    .service-img-detail {
+        height: 90%;
+    }
+    
+    .service-no-img-detail {
+        height: 90%;
     }
 }
 
