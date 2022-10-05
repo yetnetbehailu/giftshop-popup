@@ -44,13 +44,15 @@
                         </div>
                         <div class="col-12 col-sm-6 item-info">
                             <!-- Item specification -->
-                            {% if item.product.is_service == False %}
                             {% include 'cart/includes_cart/item_specification.html'%}
                             <!-- Item cost -->
                             <p class="mb-1"><strong>€ {{ item.product.price }}</strong><small class="text-muted"> / per unit</small></p>
-                            <p class="mb-2"><strong>Subtotal: {{ item.product.price | calc_subtotal:item.quantity }} €</strong></p>
+                            <p class="mb-3"><strong>Subtotal: {{ item.product.price | calc_subtotal:item.quantity }} €</strong></p>
                             <!-- Item quantity -->
                             {% include 'cart/includes_cart/update_cart_form.html'%}
+                            <!-- Service specification -->
+                            {% if item.product.is_service == True %}
+                            {% include 'cart/includes_cart/service_specification.html'%}
                             {% endif %}
                         </div>
                     </div>
