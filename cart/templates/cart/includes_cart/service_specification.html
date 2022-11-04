@@ -1,0 +1,4 @@
+<h5 class="mt-3 mb-1"><strong>{{item.product.name}}</strong></h5>
+{% if item.product.duration %}
+<p class="mb-3">Duration: {{item.product.duration}} {% if item.product.duration < 2 %}hour {% else %} hours {% endif %}</p>
+{% endif %}

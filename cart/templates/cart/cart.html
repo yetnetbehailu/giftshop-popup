@@ -28,7 +28,7 @@
                 <a class="btn yellow-btn d-block" href="#">Proceed to Payment <span><i class="fa-solid fa-angle-right"></i></span></a>
             </div>
             <div class="col-12 cart-summary">
-            <p class="text-muted mb-0">Summary of cart content below<i class="fa-solid fa-angles-down px-2"></i></p>
+            <p class="text-muted mb-0 small">Summary of cart content below<i class="fa-solid fa-angles-down px-2"></i></p>
             </div>
         </div>
         <div class="row">
@@ -44,15 +44,21 @@
                         </div>
                         <div class="col-12 col-sm-6 item-info">
                             <!-- Item specification -->
+                            {% if item.product.is_service == False %}
                             {% include 'cart/includes_cart/item_specification.html'%}
                             <!-- Item cost -->
                             <p class="mb-1"><strong>€ {{ item.product.price }}</strong><small class="text-muted"> / per unit</small></p>
                             <p class="mb-3"><strong>Subtotal: {{ item.product.price | calc_subtotal:item.quantity }} €</strong></p>
                             <!-- Item quantity -->
                             {% include 'cart/includes_cart/update_cart_form.html'%}
+                            {% else %}
                             <!-- Service specification -->
-                            {% if item.product.is_service == True %}
                             {% include 'cart/includes_cart/service_specification.html'%}
+                            <!-- Service cost -->
+                            <p class="mb-1"><strong>€ {{ item.product.price }}</strong><small class="text-muted"> / per person</small></p>
+                            <p class="mb-3"><strong>Subtotal: {{ item.product.price | calc_subtotal:item.quantity }} €</strong></p>
+                            <!-- Number of participants -->
+                            {% include 'cart/includes_cart/update_service_form.html'%}
                             {% endif %}
                         </div>
                     </div>
@@ -67,7 +73,7 @@
                                     <th scope="col">Item details</th>
                                     <th scope="col"></th>
                                     <th scope="col">Price</th>
-                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Quantity/Participants</th>
                                     <th scope="col">Subtotal</th>
                                 </tr>
                             </thead>
@@ -77,17 +83,32 @@
                                         {% include 'cart/includes_cart/item_image.html'%}
                                     </td>
                                     {% if item.product.is_service == False %}
-                                    <td class="py-3">
+                                    <td class="py-3 w-25">
                                         {% include 'cart/includes_cart/item_specification.html'%}
                                     </td>
                                     <td class="td-padding">
-                                        <p class="mb-1"><strong>€ {{ item.product.price }}</strong><small class="text-muted"> / per unit</small></p>
+                                        <p class="mb-1"><strong>€ {{ item.product.price }}</strong></p><span><small class="text-muted"> / per unit</small></span>
                                     </td>
                                     <td class="td-padding w-25 py-3">
                                         {% include 'cart/includes_cart/update_cart_form.html'%}
                                     </td>
                                     <td class="td-padding">
-                                        <p class="mb-2"><strong>{{ item.product.price | calc_subtotal:item.quantity }} €</strong></p>
+                                        <p class="mb-2"><strong>€</strong></p>
+                                        <span><strong>{{ item.product.price | calc_subtotal:item.quantity }} </strong></span>
+                                    </td>
+                                    {% else %}
+                                    <td class="py-3 w-25">
+                                    {% include 'cart/includes_cart/service_specification.html'%}
+                                    </td>
+                                    <td class="td-padding">
+                                        <p class="mb-1"><strong>€ {{ item.product.price }}</strong></p><span><small class="text-muted"> / per person</small></span>
+                                    </td>
+                                    <td class="td-padding w-25 py-3">
+                                        {% include 'cart/includes_cart/update_service_form.html'%}
+                                    </td>
+                                    <td class="td-padding">
+                                        <p class="mb-2"><strong>€</strong></p>
+                                        <span><strong>{{ item.product.price | calc_subtotal:item.quantity }} </strong></span>
                                     </td>
                                     {% endif %}
                                 </tr>
