@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Nunito:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Nunito:wght@500;700&display=swap');
 
 /* Colour and Font Variables */
 :root {
@@ -185,6 +185,14 @@ a.disabled {
     border: 0;
     background-color: var(--pastelblue);
     font-family: var(--exo-2);
+}
+
+.nunito-bold {
+    font-weight: 700;
+}
+
+.size-font {
+    font-size: small;
 }
 
 /* Home page */
@@ -434,7 +442,7 @@ text-align: center;
 }
 
 .cart-btns {
-    width: 70% ;
+    width: 72% ;
     margin: auto;
 }
 
@@ -532,6 +540,30 @@ text-align: center;
 
 .star-rating {
     color: var(--yellow);
+}
+
+/* Checkout page */
+.order-summary {
+    background-color: var(--sheeryellow);
+    font-family: var(--nunito);
+}
+
+.order-border {
+    border-bottom: 1px #c8c480 solid;
+    margin: auto;
+}
+
+.summary-items {
+    max-height: 16rem;
+    overflow-y: auto;
+}
+
+.checkout-btn {
+    width: 60%;
+}
+
+.order-form {
+    font-family: var(--nunito);
 }
 
 /* Media Queries */

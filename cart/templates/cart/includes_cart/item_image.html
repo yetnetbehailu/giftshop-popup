@@ -1,7 +1,7 @@
 {% if item.product.image_url %}
-<img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="mw-100">
+<img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="mw-100 h-100">
 {% elif item.product.image %}
-<img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="mw-100">
+<img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="mw-100 h-100">
 {% else %}
-<img src="{{ MEDIA_URL }}no-image.jpeg" alt="{{ item.product.name }}" class="mw-100">
+<img src="{{ MEDIA_URL }}no-image.jpeg" alt="{{ item.product.name }}" class="mw-100 h-100">
 {% endif %}
