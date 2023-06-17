@@ -1,6 +1,7 @@
 # GiftShop Pop-up
 
-The live website can be viewed [here]()
+> **Note:**<br>
+>Heroku hosting has been substituted with Render hosting, to view the live site on Render click [here](https://giftshop-popup-app.onrender.com/)
 
 ### Overview
 
